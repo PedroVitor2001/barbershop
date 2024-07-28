@@ -10,5 +10,8 @@
   },
   "dependencies": {
     "@prisma/client": "^5.17.0"
+  },
+  "scripts": {
+    "prepare": "husky"
   }
 }
