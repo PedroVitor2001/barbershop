@@ -16,8 +16,6 @@ const SidebarSheet = () => {
   const handleLoginWithGoogleClick = () => signIn("google")
   const handleLogoutClick = () => signOut()
 
-  console.log(data?.user)
-
   return (
     <SheetContent className="overflow-y-auto">
       <SheetHeader>
