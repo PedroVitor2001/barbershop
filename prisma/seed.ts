@@ -1,4 +1,4 @@
-import { Barbershop, PrismaClient } from "@prisma/client";
+const { PrismaClient } = require("@prisma/client");
 
 const prisma = new PrismaClient();
 
@@ -101,7 +101,7 @@ async function seedDatabase() {
     ];
 
     // Criar 10 barbearias com nomes e endereços fictícios
-    const barbershops: Barbershop[] = [];
+    const barbershops = [];
     for (let i = 0; i < 10; i++) {
       const name = creativeNames[i];
       const address = addresses[i];
