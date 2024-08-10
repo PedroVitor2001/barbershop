@@ -3,6 +3,7 @@ import { Button } from "./_components/ui/button"
 import Image from "next/image"
 import { db } from "./_lib/prisma"
 import BarbershopItem from "./_components/barbershop-item"
+import UserGreeting from "./_components/user-greeting"
 import { quickSearchOptions } from "./_constants/search"
 import BookingItem from "./_components/booking-item"
 import Search from "./_components/search"
@@ -23,9 +24,7 @@ const Home = async () => {
       <div className="p-5">
         {/* TEXTO */}
         {/*fazer client component para renderizar nome */}
-        <h2 className="text-xl font-bold">Olá, Pedro!</h2>
-        <p>Segunda-feira, 05 de agosto.</p>
-
+        <UserGreeting />
         {/* BUSCA */}
         <div className="mt-6">
           <Search />
