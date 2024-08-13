@@ -5,7 +5,6 @@ import { getServerSession } from "next-auth"
 import { authOptions } from "../_lib/auth"
 import { notFound } from "next/navigation"
 import BookingItem from "../_components/booking-item"
-import { lt } from "date-fns/locale"
 
 const Bookings = async () => {
   const session = await getServerSession(authOptions)
