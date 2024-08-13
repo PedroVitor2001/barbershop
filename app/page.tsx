@@ -47,7 +47,6 @@ const Home = async () => {
       <Header />
       <div className="p-5">
         {/* TEXTO */}
-        {/*fazer client component para renderizar nome */}
         <UserGreeting />
         {/* BUSCA */}
         <div className="mt-6">
@@ -90,7 +89,7 @@ const Home = async () => {
           Agendamentos
         </h2>
         {/* AGENDAMENTO */}
-        <div className="flex gap-3 overflow-x-auto [&::-webkit-scrollbar]:hidden">
+        <div className="flex w-full gap-3 overflow-x-auto [&::-webkit-scrollbar]:hidden">
           {bookings.map((booking) => (
             <BookingItem key={booking.id} booking={booking} />
           ))}
