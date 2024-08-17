@@ -17,12 +17,14 @@ const UserGreeting = () => {
     <div>
       {data?.user ? (
         <div>
-          <h2 className="text-xl font-bold">Olá, {data.user.name}!</h2>
-          <p>{dataFormatada}.</p>
+          <h2 className="text-xl font-bold text-black">
+            Olá, {data.user.name}!
+          </h2>
+          <p className="text-black">{dataFormatada}.</p>
         </div>
       ) : (
         <div>
-          <p>{dataFormatada}.</p>
+          <p className="text-black">{dataFormatada}.</p>
         </div>
       )}
     </div>

@@ -48,7 +48,7 @@ const Search = () => {
             </FormItem>
           )}
         />
-        <Button type="submit">
+        <Button type="submit" variant="blue">
           <SearchIcon />
         </Button>
       </form>

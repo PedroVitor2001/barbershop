@@ -154,7 +154,7 @@ const ServiceItem = ({ service, barbershop }: ServiceItemProps) => {
 
   return (
     <>
-      <Card>
+      <Card className="border-none bg-slate-50">
         <CardContent className="flex items-center gap-3 p-3">
           {/* IMAGE */}
           <div className="relative max-h-[110px] min-h-[110px] min-w-[110px] max-w-[110px]">
@@ -167,11 +167,11 @@ const ServiceItem = ({ service, barbershop }: ServiceItemProps) => {
           </div>
           {/* DIREITA */}
           <div className="space-y-2">
-            <h3 className="text-sm font-semibold">{service.name}</h3>
-            <p className="text-sm text-gray-400">{service.description}</p>
+            <h3 className="text-sm font-semibold text-black">{service.name}</h3>
+            <p className="text-sm text-black">{service.description}</p>
             {/* PREÇO E BOTÃO */}
             <div className="flex items-center justify-between">
-              <p className="text-sm font-bold text-primary">
+              <p className="text-sm font-bold text-black">
                 {Intl.NumberFormat("pt-BR", {
                   style: "currency",
                   currency: "BRL",
@@ -183,20 +183,23 @@ const ServiceItem = ({ service, barbershop }: ServiceItemProps) => {
                 onOpenChange={handleBookingSheetOpenChange}
               >
                 <Button
-                  variant="secondary"
                   size="sm"
                   onClick={handleBookingClick}
+                  className="bg-white text-black"
                 >
                   Reservar
                 </Button>
 
-                <SheetContent className="px-0">
+                <SheetContent className="bg-white px-0">
                   <SheetHeader>
-                    <SheetTitle>Fazer Reserva</SheetTitle>
+                    <SheetTitle className="text-black">
+                      Fazer Reserva
+                    </SheetTitle>
                   </SheetHeader>
 
-                  <div className="border-b border-solid py-5">
+                  <div className="py-5">
                     <Calendar
+                      className="text-black"
                       mode="single"
                       locale={ptBR}
                       selected={selectedDay}
@@ -229,14 +232,12 @@ const ServiceItem = ({ service, barbershop }: ServiceItemProps) => {
                   </div>
 
                   {selectedDay && (
-                    <div className="flex gap-3 overflow-x-auto border-b border-solid p-5 [&::-webkit-scrollbar]:hidden">
+                    <div className="flex gap-3 overflow-x-auto p-5 [&::-webkit-scrollbar]:hidden">
                       {timeList.length > 0 ? (
                         timeList.map((time) => (
                           <Button
                             key={time}
-                            variant={
-                              selectedTime === time ? "default" : "outline"
-                            }
+                            variant={selectedTime === time ? "blue" : "outline"}
                             className="rounded-full"
                             onClick={() => handleTimeSelect(time)}
                           >
@@ -253,11 +254,13 @@ const ServiceItem = ({ service, barbershop }: ServiceItemProps) => {
 
                   {selectedTime && selectedDay && (
                     <div className="p-5">
-                      <Card>
-                        <CardContent className="space-y-3 p-3">
+                      <Card className="border-none">
+                        <CardContent className="space-y-3 bg-slate-50 p-3">
                           <div className="flex items-center justify-between">
-                            <h2 className="font-bold">{service.name}</h2>
-                            <p className="text-sm font-bold">
+                            <h2 className="font-bold text-black">
+                              {service.name}
+                            </h2>
+                            <p className="text-sm font-bold text-black">
                               {Intl.NumberFormat("pt-BR", {
                                 style: "currency",
                                 currency: "BRL",
@@ -266,8 +269,8 @@ const ServiceItem = ({ service, barbershop }: ServiceItemProps) => {
                           </div>
 
                           <div className="flex items-center justify-between">
-                            <h2 className="text-sm text-gray-400">Data</h2>
-                            <p className="text-sm">
+                            <h2 className="text-sm text-black">Data</h2>
+                            <p className="text-sm text-black">
                               {format(selectedDay, "d 'de' MMMM", {
                                 locale: ptBR,
                               })}
@@ -275,13 +278,15 @@ const ServiceItem = ({ service, barbershop }: ServiceItemProps) => {
                           </div>
 
                           <div className="flex items-center justify-between">
-                            <h2 className="text-sm text-gray-400">Horário</h2>
-                            <p className="text-sm">{selectedTime}</p>
+                            <h2 className="text-sm text-black">Horário</h2>
+                            <p className="text-sm text-black">{selectedTime}</p>
                           </div>
 
                           <div className="flex items-center justify-between">
-                            <h2 className="text-sm text-gray-400">Barbearia</h2>
-                            <p className="text-sm">{barbershop.name}</p>
+                            <h2 className="text-sm text-black">Barbearia</h2>
+                            <p className="text-sm text-black">
+                              {barbershop.name}
+                            </p>
                           </div>
                         </CardContent>
                       </Card>
@@ -291,6 +296,7 @@ const ServiceItem = ({ service, barbershop }: ServiceItemProps) => {
                     <Button
                       onClick={handleCreateBooking}
                       disabled={!selectedDay || !selectedTime}
+                      variant="blue"
                     >
                       Confirmar
                     </Button>

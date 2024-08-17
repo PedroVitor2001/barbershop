@@ -43,8 +43,8 @@ const BarbershopPage = async ({ params }: BarbershopPageProps) => {
 
         <Button
           size="icon"
-          variant="secondary"
-          className="absolute left-4 top-4"
+          variant="gray"
+          className="absolute left-4 top-4 text-black"
           asChild
         >
           <Link href="/">
@@ -57,7 +57,7 @@ const BarbershopPage = async ({ params }: BarbershopPageProps) => {
             <Button
               size="icon"
               variant="outline"
-              className="absolute right-4 top-4"
+              className="absolute right-4 top-4 border-none bg-white text-black"
             >
               <MenuIcon />
             </Button>
@@ -67,28 +67,30 @@ const BarbershopPage = async ({ params }: BarbershopPageProps) => {
       </div>
 
       {/* TÍTULO */}
-      <div className="border-b border-solid p-5">
-        <h1 className="mb-3 text-xl font-bold">{barbershop.name}</h1>
+      <div className="border-b border-none bg-white p-5">
+        <h1 className="mb-3 text-xl font-bold text-black">{barbershop.name}</h1>
         <div className="mb-2 flex items-center gap-2">
-          <MapPinIcon className="text-primary" size={18} />
-          <p className="text-sm">{barbershop?.address}</p>
+          <MapPinIcon className="text-blue" size={18} />
+          <p className="text-sm text-black">{barbershop?.address}</p>
         </div>
 
         <div className="flex items-center gap-2">
-          <StarIcon className="fill-primary text-primary" size={18} />
-          <p className="text-sm">5,0 (499 avaliações)</p>
+          <StarIcon className="fill-blue text-blue" size={18} />
+          <p className="text-sm text-black">5,0 (499 avaliações)</p>
         </div>
       </div>
 
       {/* DESCRIÇÃO */}
-      <div className="space-y-2 border-b border-solid p-5">
-        <h2 className="text-xs font-bold uppercase text-gray-400">Sobre nós</h2>
-        <p className="text-justify text-sm">{barbershop?.description}</p>
+      <div className="space-y-2 border-b border-none bg-white p-5">
+        <h2 className="text-xs font-bold uppercase text-black">Sobre nós</h2>
+        <p className="text-justify text-sm text-black">
+          {barbershop?.description}
+        </p>
       </div>
 
       {/* SERVIÇOS */}
-      <div className="space-y-3 border-b border-solid p-5">
-        <h2 className="text-xs font-bold uppercase text-gray-400">Serviços</h2>
+      <div className="space-y-3 border-b border-solid bg-white p-5">
+        <h2 className="text-xs font-bold uppercase text-black">Serviços</h2>
         <div className="space-y-3">
           {barbershop.services.map((service) => (
             <ServiceItem

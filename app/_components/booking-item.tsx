@@ -66,14 +66,14 @@ const BookingItem = ({ booking }: BookingItemProps) => {
 
   return (
     <Sheet open={isSheetOpen} onOpenChange={handleSheetOpenChange}>
-      <SheetTrigger className="w-full">
+      <SheetTrigger className="w-full min-w-[90%]">
         <Card className="min-w-[90%]">
           <CardContent className="flex justify-between p-0">
             {/* ESQUERDA */}
             <div className="flex flex-col gap-2 py-5 pl-5">
               <Badge
                 className="w-fit"
-                variant={isConfirmed ? "default" : "secondary"}
+                variant={isConfirmed ? "blue" : "secondary"}
               >
                 {isConfirmed ? "Confirmado" : "Finalizado"}
               </Badge>
@@ -148,7 +148,7 @@ const BookingItem = ({ booking }: BookingItemProps) => {
               </div>
 
               <div className="flex items-center justify-between">
-                <h2 className="text-sm text-gray-400">Data</h2>
+                <h2 className="text-gray-400 text-sm">Data</h2>
                 <p className="text-sm">
                   {format(booking.date, "d 'de' MMMM", {
                     locale: ptBR,
@@ -157,14 +157,14 @@ const BookingItem = ({ booking }: BookingItemProps) => {
               </div>
 
               <div className="flex items-center justify-between">
-                <h2 className="text-sm text-gray-400">Horário</h2>
+                <h2 className="text-gray-400 text-sm">Horário</h2>
                 <p className="text-sm">
                   {format(booking.date, "HH:mm", { locale: ptBR })}
                 </p>
               </div>
 
               <div className="flex items-center justify-between">
-                <h2 className="text-sm text-gray-400">Barbearia</h2>
+                <h2 className="text-gray-400 text-sm">Barbearia</h2>
                 <p className="text-sm">{barbershop.name}</p>
               </div>
             </CardContent>

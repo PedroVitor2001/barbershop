@@ -16,9 +16,9 @@ const SidebarSheet = () => {
   const handleLogoutClick = () => signOut()
 
   return (
-    <SheetContent className="overflow-y-auto">
+    <SheetContent className="overflow-y-auto bg-white">
       <SheetHeader>
-        <SheetTitle className="text-left">Menu</SheetTitle>
+        <SheetTitle className="text-left text-black">Menu</SheetTitle>
       </SheetHeader>
 
       <div className="flex items-center justify-between gap-3 border-b border-solid py-5">
@@ -29,13 +29,13 @@ const SidebarSheet = () => {
             </Avatar>
 
             <div>
-              <p className="font-bold">{data.user.name}</p>
-              <p className="text-xs">{data.user.email}</p>
+              <p className="font-bold text-black">{data.user.name}</p>
+              <p className="text-xs text-black">{data.user.email}</p>
             </div>
           </div>
         ) : (
           <>
-            <h2 className="font-bold">Olá, faça seu login!</h2>
+            <h2 className="font-bold text-black">Olá, faça seu login!</h2>
             <Dialog>
               <DialogTrigger asChild>
                 <Button size="icon">
@@ -52,14 +52,22 @@ const SidebarSheet = () => {
 
       <div className="flex flex-col gap-2 border-b border-solid py-5">
         <SheetClose asChild>
-          <Button className="justify-start gap-2" variant="ghost" asChild>
+          <Button
+            className="justify-start gap-2 text-black"
+            variant="ghost"
+            asChild
+          >
             <Link href="/">
               <HomeIcon size={18} />
               Início
             </Link>
           </Button>
         </SheetClose>
-        <Button className="justify-start gap-2" variant="ghost" asChild>
+        <Button
+          className="justify-start gap-2 text-black"
+          variant="ghost"
+          asChild
+        >
           <Link href="/bookings">
             <CalendarIcon size={18} />
             Agendamentos
@@ -67,7 +75,7 @@ const SidebarSheet = () => {
         </Button>
       </div>
 
-      <div className="flex flex-col gap-2 border-b border-solid py-5">
+      <div className="flex flex-col gap-2 border-b border-solid py-5 text-black">
         {quickSearchOptions.map((option) => (
           <SheetClose key={option.title} asChild>
             <Button className="justify-start gap-2" variant="ghost" asChild>
@@ -89,7 +97,7 @@ const SidebarSheet = () => {
         <div className="flex flex-col gap-2 py-5">
           <Button
             variant="ghost"
-            className="justify-start gap-2"
+            className="justify-start gap-2 text-black"
             onClick={handleLogoutClick}
           >
             <LogOutIcon size={18} />

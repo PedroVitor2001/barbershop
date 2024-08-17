@@ -42,7 +42,7 @@ const Home = async () => {
     : []
 
   return (
-    <div>
+    <div className="bg-white">
       {/* header */}
       <Header />
       <div className="p-5">
@@ -85,17 +85,21 @@ const Home = async () => {
           />
         </div>
 
-        <h2 className="mb-3 mt-6 text-xs font-bold uppercase text-gray-400">
-          Agendamentos
-        </h2>
-        {/* AGENDAMENTO */}
-        <div className="flex w-full gap-3 overflow-x-auto [&::-webkit-scrollbar]:hidden">
-          {bookings.map((booking) => (
-            <BookingItem key={booking.id} booking={booking} />
-          ))}
-        </div>
+        {bookings.length > 0 && (
+          <>
+            <h2 className="mb-3 mt-6 text-xs font-bold uppercase text-black">
+              Agendamentos
+            </h2>
+            {/* AGENDAMENTO */}
+            <div className="flex w-full gap-3 overflow-x-auto [&::-webkit-scrollbar]:hidden">
+              {bookings.map((booking) => (
+                <BookingItem key={booking.id} booking={booking} />
+              ))}
+            </div>
+          </>
+        )}
 
-        <h2 className="mb-3 mt-6 text-xs font-bold uppercase text-gray-400">
+        <h2 className="mb-3 mt-6 text-xs font-bold uppercase text-black">
           Recomendados
         </h2>
         <div className="flex gap-4 overflow-auto [&::-webkit-scrollbar]:hidden">
@@ -104,7 +108,7 @@ const Home = async () => {
           ))}
         </div>
 
-        <h2 className="mb-3 mt-6 text-xs font-bold uppercase text-gray-400">
+        <h2 className="mb-3 mt-6 text-xs font-bold uppercase text-black">
           Populares
         </h2>
         <div className="flex gap-4 overflow-auto [&::-webkit-scrollbar]:hidden">
