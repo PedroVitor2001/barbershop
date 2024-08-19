@@ -67,7 +67,7 @@ const BookingItem = ({ booking }: BookingItemProps) => {
   return (
     <Sheet open={isSheetOpen} onOpenChange={handleSheetOpenChange}>
       <SheetTrigger className="w-full min-w-[90%]">
-        <Card className="min-w-[90%]">
+        <Card className="min-w-[90%] border-none bg-slate-50">
           <CardContent className="flex justify-between p-0">
             {/* ESQUERDA */}
             <div className="flex flex-col gap-2 py-5 pl-5">
@@ -77,24 +77,28 @@ const BookingItem = ({ booking }: BookingItemProps) => {
               >
                 {isConfirmed ? "Confirmado" : "Finalizado"}
               </Badge>
-              <h3 className="font-semibold">{booking.service.name}</h3>
+              <h3 className="font-semibold text-black">
+                {booking.service.name}
+              </h3>
 
               <div className="flex items-center gap-2">
                 <Avatar className="h-6 w-6">
                   <AvatarImage src={booking.service.barbershop.imageUrl} />
                 </Avatar>
-                <p className="text-sm">{booking.service.barbershop.name}</p>
+                <p className="text-sm text-black">
+                  {booking.service.barbershop.name}
+                </p>
               </div>
             </div>
             {/* DIREITA */}
-            <div className="flex flex-col items-center justify-center border-l-2 border-solid px-5">
-              <p className="text-sm capitalize">
+            <div className="flex flex-col items-center justify-center px-5">
+              <p className="text-sm capitalize text-black">
                 {format(booking.date, "MMMM", { locale: ptBR })}
               </p>
-              <p className="text-2xl">
+              <p className="text-2xl text-black">
                 {format(booking.date, "dd", { locale: ptBR })}
               </p>
-              <p className="text-sm">
+              <p className="text-sm text-black">
                 {format(booking.date, "HH:mm", { locale: ptBR })}
               </p>
             </div>
