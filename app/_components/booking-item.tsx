@@ -72,7 +72,7 @@ const BookingItem = ({ booking }: BookingItemProps) => {
             {/* ESQUERDA */}
             <div className="flex flex-col gap-2 py-5 pl-5">
               <Badge
-                className="w-fit"
+                className="w-fit border-none"
                 variant={isConfirmed ? "blue" : "secondary"}
               >
                 {isConfirmed ? "Confirmado" : "Finalizado"}
@@ -105,9 +105,11 @@ const BookingItem = ({ booking }: BookingItemProps) => {
           </CardContent>
         </Card>
       </SheetTrigger>
-      <SheetContent className="w-[90%]">
+      <SheetContent className="w-[90%] bg-white">
         <SheetHeader>
-          <SheetTitle className="text-left">Informações da Reserva</SheetTitle>
+          <SheetTitle className="text-left text-black">
+            Informações da Reserva
+          </SheetTitle>
         </SheetHeader>
 
         <div className="relative mt-6 flex h-[180px] w-full items-end rounded-xl">
@@ -118,14 +120,14 @@ const BookingItem = ({ booking }: BookingItemProps) => {
             alt={`mapa da barbearia ${booking.service.barbershop.name}`}
           />
 
-          <Card className="z-50 mx-5 mb-3 w-full">
+          <Card className="z-50 mx-5 mb-3 w-full bg-slate-50">
             <CardContent className="items-centerpx-5 flex py-3">
               <Avatar>
                 <AvatarImage src={barbershop.imageUrl} />
               </Avatar>
-              <div>
-                <h3 className="font-bold">{barbershop.name}</h3>
-                <p className="text-xs">{barbershop.address}</p>
+              <div className="px-3">
+                <h3 className="font-bold text-black">{barbershop.name}</h3>
+                <p className="text-xs text-black">{barbershop.address}</p>
               </div>
             </CardContent>
           </Card>
@@ -133,17 +135,17 @@ const BookingItem = ({ booking }: BookingItemProps) => {
 
         <div className="mt-6">
           <Badge
-            className="w-fit"
+            className="w-fit bg-blue"
             variant={isConfirmed ? "default" : "secondary"}
           >
             {isConfirmed ? "Confirmado" : "Finalizado"}
           </Badge>
 
-          <Card className="mb-6 mt-3">
+          <Card className="mb-6 mt-3 border-none bg-slate-50">
             <CardContent className="space-y-3 p-3">
               <div className="flex items-center justify-between">
-                <h2 className="font-bold">{booking.service.name}</h2>
-                <p className="text-sm font-bold">
+                <h2 className="font-bold text-black">{booking.service.name}</h2>
+                <p className="text-sm font-bold text-black">
                   {Intl.NumberFormat("pt-BR", {
                     style: "currency",
                     currency: "BRL",
@@ -152,8 +154,8 @@ const BookingItem = ({ booking }: BookingItemProps) => {
               </div>
 
               <div className="flex items-center justify-between">
-                <h2 className="text-gray-400 text-sm">Data</h2>
-                <p className="text-sm">
+                <h2 className="text-sm text-black">Data</h2>
+                <p className="text-sm text-black">
                   {format(booking.date, "d 'de' MMMM", {
                     locale: ptBR,
                   })}
@@ -161,20 +163,20 @@ const BookingItem = ({ booking }: BookingItemProps) => {
               </div>
 
               <div className="flex items-center justify-between">
-                <h2 className="text-gray-400 text-sm">Horário</h2>
-                <p className="text-sm">
+                <h2 className="text-sm text-black">Horário</h2>
+                <p className="text-sm text-black">
                   {format(booking.date, "HH:mm", { locale: ptBR })}
                 </p>
               </div>
 
               <div className="flex items-center justify-between">
-                <h2 className="text-gray-400 text-sm">Barbearia</h2>
-                <p className="text-sm">{barbershop.name}</p>
+                <h2 className="text-sm text-black">Barbearia</h2>
+                <p className="text-sm text-black">{barbershop.name}</p>
               </div>
             </CardContent>
           </Card>
 
-          <div className="space-y-3">
+          <div className="space-y-3 text-black">
             {barbershop.phones.map((phone, index) => (
               <PhoneItem key={index} phone={phone} />
             ))}
@@ -183,7 +185,7 @@ const BookingItem = ({ booking }: BookingItemProps) => {
         <SheetFooter className="mt-6">
           <div className="flex items-center gap-3">
             <SheetClose asChild>
-              <Button variant="outline" className="w-full">
+              <Button variant="blue" className="w-full text-white">
                 Voltar
               </Button>
             </SheetClose>
@@ -204,7 +206,7 @@ const BookingItem = ({ booking }: BookingItemProps) => {
                   </DialogHeader>
                   <DialogFooter className="flex flex-row gap-3">
                     <DialogClose asChild>
-                      <Button variant="secondary" className="w-full">
+                      <Button variant="blue" className="w-full text-white">
                         Voltar
                       </Button>
                     </DialogClose>

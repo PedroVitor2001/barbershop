@@ -51,12 +51,12 @@ const Bookings = async () => {
   })
 
   return (
-    <>
+    <div className="bg-white">
       <Header />
       <div className="space-y-3 p-5">
-        <h1 className="text-xl font-bold">Agendamentos</h1>
+        <h1 className="text-xl font-bold text-black">Agendamentos</h1>
         {confirmedBookings.length > 0 && (
-          <h2 className="mb-3 mt-6 text-xs font-bold uppercase text-gray-400">
+          <h2 className="mb-3 mt-6 text-xs font-bold uppercase text-black">
             Confirmados
           </h2>
         )}
@@ -64,7 +64,7 @@ const Bookings = async () => {
           <BookingItem key={booking.id} booking={booking} />
         ))}
         {concluedBookings.length > 0 && (
-          <h2 className="mb-3 mt-6 text-xs font-bold uppercase text-gray-400">
+          <h2 className="mb-3 mt-6 text-xs font-bold uppercase text-black">
             Finalizados
           </h2>
         )}
@@ -72,7 +72,7 @@ const Bookings = async () => {
           <BookingItem key={booking.id} booking={booking} />
         ))}
       </div>
-    </>
+    </div>
   )
 }
 

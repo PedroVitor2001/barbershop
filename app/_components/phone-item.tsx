@@ -23,9 +23,10 @@ const PhoneItem = ({ phone }: PhoneItemProps) => {
       </div>
       {/* DIREITA */}
       <Button
-        variant="outline"
+        variant="blue"
         size="sm"
         onClick={() => handleCopyPhoneClick(phone)}
+        className="text-white"
       >
         Copiar
       </Button>
