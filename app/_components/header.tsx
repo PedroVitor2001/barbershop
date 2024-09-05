@@ -12,7 +12,7 @@ const Header = () => {
     <Card className="border-none bg-slate-50">
       <CardContent className="flex flex-row items-center justify-between p-5">
         <Link href="/">
-          <h1 className="font font-bold uppercase text-blue">barbearia</h1>
+          <h1 className="font font-bold text-blue">barbearia</h1>
           {/* <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <Button variant="outline" size="icon">
