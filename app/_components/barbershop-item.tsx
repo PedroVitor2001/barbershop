@@ -21,6 +21,7 @@ const BarbershopItem = ({ barbershop }: BarbershopItemProps) => {
             fill
             className="rounded-2xl object-cover"
             src={barbershop.imageUrl}
+            data-testid="barbershop-image"
           />
 
           <Badge
