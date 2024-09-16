@@ -41,7 +41,12 @@ const BarbershopItem = ({ barbershop }: BarbershopItemProps) => {
           <p className="truncate text-sm text-slate-400">
             {barbershop.address}
           </p>
-          <Button variant="gray" className="mt-3 w-full" asChild>
+          <Button
+            variant="gray"
+            className="mt-3 w-full"
+            asChild
+            data-testid="button-book"
+          >
             <Link href={`/barbershops/${barbershop.id}`}>
               <p className="text-black">Reservar</p>
             </Link>
