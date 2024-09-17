@@ -185,7 +185,8 @@ const ServiceItem = ({ service, barbershop }: ServiceItemProps) => {
                 <Button
                   size="sm"
                   onClick={handleBookingClick}
-                  className="bg-white text-black"
+                  className="text-black"
+                  variant="gray"
                 >
                   Reservar
                 </Button>
