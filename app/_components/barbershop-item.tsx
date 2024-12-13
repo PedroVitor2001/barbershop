@@ -29,7 +29,7 @@ const BarbershopItem = ({ barbershop }: BarbershopItemProps) => {
             variant="secondary"
           >
             <StarIcon size={12} className="fill-blue text-blue" />
-            <p className="text-xs font-semibold text-black">5,0</p>
+            <p className="text-xs font-semibold text-black">55</p>
           </Badge>
         </div>
 
